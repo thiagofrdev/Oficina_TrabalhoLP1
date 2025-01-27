@@ -109,4 +109,4 @@ Contribuições para melhorias são bem-vindas! Caso encontre bugs ou tenha suge
   - GitHub: https://github.com/thiagofrdev
   - Linkedin: https://www.linkedin.com/in/thiagoferreiraribeiro/
 
-**Instituição:** Instituto Federal de Educação Ciência e Tecnologia da Bahia - IFBA - Campus Vitória da Conquista
+**Instituição:** Instituto Federal de Educação Ciência e Tecnologia da Bahia (IFBA) - Campus Vitória da Conquista
