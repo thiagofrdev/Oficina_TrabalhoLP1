@@ -52,7 +52,7 @@ public class Controle {
 	
 	}
 
-	public void alterarStatusOS(int idOrdem, String status) {
+	public void alterarStatusOS(int idOrdem, Status status) {
 	
 	}
 
