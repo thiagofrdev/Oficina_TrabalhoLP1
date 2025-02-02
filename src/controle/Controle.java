@@ -76,12 +76,14 @@ public class Controle {
 		return null;
 	}
 
-	public String imprimirOrdensId(int idOrdem) {
+	public OrdemServico imprimirOrdensId(int idOrdem) {
 		for (OrdemServico os : ordens){
 			if (os.getId() == idOrdem) {
 				System.out.println(os);
+				return os;
 			}
 		}
+		System.out.printf("Não existe uma OS com o ID %d\n", idOrdem);
 		return null;
 	}
 

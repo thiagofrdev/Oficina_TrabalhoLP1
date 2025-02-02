@@ -90,6 +90,7 @@ public class Main {
 				System.out.print("ID da OS: ");
 				int id = sc.nextInt();
 				oficina.imprimirOrdensId(id);
+				System.out.print("Novo Status (1-ABERTA, 2-EM_ANDAMENTO, 3-CONCLUIDA): ");
 				System.out.println();
 
 				break;
