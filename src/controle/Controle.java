@@ -53,7 +53,11 @@ public class Controle {
 	}
 
 	public void alterarStatusOS(int idOrdem, Status status) {
-	
+		for (OrdemServico os : ordens){
+			if (os.getId() == idOrdem) {
+				os.setStatus(status);
+			}
+		}
 	}
 
 	public String imprimirOrdensPlaca(String placaVeiculo) {
