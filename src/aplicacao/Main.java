@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 import controle.Controle;
+import entidades.OrdemServico;
 import enums.Status;
 
 public class Main {
@@ -85,14 +86,23 @@ public class Main {
 
 				break;
 			case 8:
-				System.out.println("\nAlterar o status de uma OS informando o Id e o status");
 				System.out.println("Alterar o status de OS");
 				System.out.print("ID da OS: ");
 				int id = sc.nextInt();
-				oficina.imprimirOrdensId(id);
-				System.out.print("Novo Status (1-ABERTA, 2-EM_ANDAMENTO, 3-CONCLUIDA): ");
-				System.out.println();
 
+				OrdemServico os = oficina.imprimirOrdensId(id);
+				if (os == null) {
+					break;
+				}
+
+				System.out.print("Novo Status (1-ABERTA, 2-EM_ANDAMENTO, 3-CONCLUIDA): ");
+				int novoStatusInt = sc.nextInt();
+				Status novoStatus = 
+					novoStatusInt == 1 ? Status.ABERTA :
+					novoStatusInt == 2 ? Status.EMANDAMENTO :
+					Status.CONCLUIDA;
+
+				oficina.alterarStatusOS(id, novoStatus);
 				break;
 			case 9:
 				System.out.println("Imprimir ordens de serviço informando a placa do carro");
