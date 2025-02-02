@@ -85,7 +85,12 @@ public class Main {
 
 				break;
 			case 8:
-				System.out.println("Alterar o status de uma OS informando o Id e o status");
+				System.out.println("\nAlterar o status de uma OS informando o Id e o status");
+				System.out.println("Alterar o status de OS");
+				System.out.print("ID da OS: ");
+				int id = sc.nextInt();
+				oficina.imprimirOrdensId(id);
+				System.out.println();
 
 				break;
 			case 9:

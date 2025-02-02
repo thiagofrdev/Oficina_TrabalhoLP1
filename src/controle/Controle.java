@@ -76,6 +76,15 @@ public class Controle {
 		return null;
 	}
 
+	public String imprimirOrdensId(int idOrdem) {
+		for (OrdemServico os : ordens){
+			if (os.getId() == idOrdem) {
+				System.out.println(os);
+			}
+		}
+		return null;
+	}
+
 	public String imprimirOrdensPeriodo(String dataInicial, String dataFinal) {
 
 		return null;
