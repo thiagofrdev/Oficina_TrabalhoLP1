@@ -113,3 +113,10 @@ replay_pid*
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java,visualstudiocode
+
+
+
+.classpath
+.project
+.settings/
+bin/
