@@ -14,21 +14,26 @@ public class Main {
 
 		int resp;
 		do {
-			System.out.print("SELECIONE UMA OPÇÃO:\r\n" 
-					+ "(0) Sair\r\n" 
-					+ "(1) Criar ordem de serviço\r\n" 
-					+ "(2) Cadastrar cliente\r\n"
-					+ "(3) Cadastrar veículo\r\n" 
-					+ "(4) Imprimir todos os clientes cadastrados\r\n"
-					+ "(5) Imprimir todos os veículos cadastrados\r\n" 
-					+ "(6) Imprimir todas as ordens de serviço\r\n"
-					+ "(7) Alterar uma OS informando valor das peças, descrição e valor da mão de obra\r\n"
-					+ "(8) Alterar o status de uma OS informando o ID e o status\r\n"
-					+ "(9) Imprimir ordens de serviço informando a placa do carro\r\n"
-					+ "(10) Imprimir ordens de serviço informando o nome do cliente\r\n"
-					+ "(11) Imprimir os veículos de um cliente\r\n" 
-					+ "(12) Imprimir as ordens de serviço por status\r\n"
-					+ "(13) Imprimir ordens de serviço de um período\n");
+			System.out.print("""
+					========================================================================================
+													   MENU OFICINA
+					========================================================================================
+					   (0) Sair
+					   (1) Criar ordem de serviço
+					   (2) Cadastrar cliente
+					   (3) Cadastrar veículo
+					   (4) Imprimir todos os clientes cadastrados
+					   (5) Imprimir todos os veículos cadastrados"
+					   (6) Imprimir todas as ordens de serviço"
+					   (7) Alterar uma OS informando valor das peças, descrição e valor da mão de obra"
+					   (8) Alterar o status de uma OS informando o ID e o status"
+					   (9) Imprimir ordens de serviço informando a placa do carro"
+					  (10) Imprimir ordens de serviço informando o nome do cliente"
+					  (11) Imprimir os veículos de um cliente"
+					  (12) Imprimir as ordens de serviço por status"
+					  (13) Imprimir ordens de serviço de um períod"
+
+						""");
 			System.out.println();
 			System.out.println("O que deseja? ");
 			resp = sc.nextInt();
