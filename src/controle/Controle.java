@@ -22,7 +22,18 @@ public class Controle {
 		ordens.add(os);
 	}
 
-	public void cadastrarVeiculo(String placa, String modelo, Cliente cliente) {
+	public void cadastrarVeiculo(String placa, String modelo, String nome) {		
+		boolean encontrarCliente = false;
+		for(Cliente cliente:clientes) {			
+			if(cliente.getNome()==nome) {
+				Veiculo vc = new Veiculo(placa, modelo, cliente);
+				veiculos.add(vc);
+				encontrarCliente = true;			
+			}			
+		}	
+		if(encontrarCliente == false) {
+			System.out.print("Cliente não encontrado");	
+		}		
 	}
 
 	public void cadastrarCliente(String nome) {
