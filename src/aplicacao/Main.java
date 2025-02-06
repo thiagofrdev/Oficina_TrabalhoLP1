@@ -73,6 +73,14 @@ public class Main {
 				break;
 			case 3:
 				System.out.println("Cadastrar veículo");
+				System.out.print("Digite a placa do veículo: ");
+				String placa2 = sc.nextLine();
+				System.out.print("Digite o modelo do veículo: ");
+				String modelo = sc.nextLine();
+				System.out.print("Digite o nome do cliente: ");
+				String nomeDoCliente = sc.nextLine();
+				oficina.cadastrarVeiculo(placa2, modelo, nomeDoCliente);
+				System.out.println("Veículo cadastrado!!!");
 				break;
 			case 4:
 				System.out.println("Imprimir todos os clientes cadastrados");
