@@ -35,7 +35,7 @@ public class Main {
 
 						""");
 			System.out.println();
-			System.out.println("O que deseja? ");
+			System.out.print("O que deseja? ");
 			resp = sc.nextInt();
 
 			switch (resp) {
@@ -51,18 +51,22 @@ public class Main {
 				sc.nextLine();
 				System.out.print("Placa do veículo: ");
 				String placa = sc.nextLine();
-				System.out.print("Descrição da mão de obra: ");
-				String descricao = sc.nextLine();
-				System.out.print("Status (1-ABERTA, 2-EM_ANDAMENTO, 3-CONCLUIDA): ");
-				int statusInt = sc.nextInt();
-				sc.nextLine();
-				Status status = statusInt == 1 ? Status.ABERTA
-						: statusInt == 2 ? Status.EMANDAMENTO : Status.CONCLUIDA;
+				if(oficina.getVeiculo(placa) != null){ 
+					System.out.print("Descrição da mão de obra: ");
+					String descricao = sc.nextLine();
+					System.out.print("Status (1-ABERTA, 2-EM_ANDAMENTO, 3-CONCLUIDA): ");
+					int statusInt = sc.nextInt();
+					sc.nextLine();
+					Status status = statusInt == 1 ? Status.ABERTA
+							: statusInt == 2 ? Status.EMANDAMENTO : Status.CONCLUIDA;
 
-				Date data=new Date();
-				oficina.criarOS(data, valorPecas, valorMaoDeObra, oficina.getVeiculo(placa), descricao, status);
-				System.out.println("Ordem de Serviço cadastrada!!!");
-				break;
+					Date data=new Date();
+					oficina.criarOS(data, valorPecas, valorMaoDeObra, oficina.getVeiculo(placa), descricao, status);
+					break;
+				} else {
+					System.out.printf("Não existe um veiculo cadastrado com a placa '%s'", placa);
+					break;
+				}				
 			case 2:
 				System.out.println("Cadastrar cliente");
 				sc.nextLine();

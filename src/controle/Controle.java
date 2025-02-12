@@ -15,11 +15,10 @@ public class Controle {
 	private List<Veiculo> veiculos = new ArrayList<>();
 	private List<Cliente> clientes = new ArrayList<>();
 
-	public void criarOS(Date data, double valorPecas, double valorMaoDeObra, Veiculo veiculo, String descricaoMaoObra,
-			Status status) {
-
+	public void criarOS(Date data, double valorPecas, double valorMaoDeObra, Veiculo veiculo, String descricaoMaoObra, Status status) {
 		OrdemServico os = new OrdemServico(data, valorPecas, valorMaoDeObra, veiculo, descricaoMaoObra, status);
 		ordens.add(os);
+		System.out.println("Ordem cadastrada!!!");
 	}
 
 	public void cadastrarVeiculo(String placa, String modelo, String nome) {		
@@ -30,18 +29,10 @@ public class Controle {
 				veiculos.add(vc);
 				encontrarCliente = true;					
 				System.out.println("Veículo cadastrado!!!");
-				//Teste para ver os veículos existentes. Excluir depois	
-				for (Veiculo veiculo:veiculos){
-					System.out.println(veiculo);
-				}
 			}			
 		}	
 		if(encontrarCliente == false) {
-			System.out.print("Cliente não encontrado");
-			//Teste para ver os veículos existentes. Excluir depois		
-			for (Veiculo veiculo:veiculos){
-				System.out.println(veiculo);
-			}
+			System.out.printf("Não foi encontrado nenhum cliente chamado '%s'", nome);
 		}		
 	}
 
