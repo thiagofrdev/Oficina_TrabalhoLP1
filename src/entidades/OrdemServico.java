@@ -90,7 +90,9 @@ public class OrdemServico {
 			+ "\nData: " + data
 			+ "\nValor de peças: R$" + valorPecas
 			+ "\nValor de mão de obra: R$" + valorMaoDeObra
-			+ "\nVeículo: " + veiculo
+			+ "\nVeículo (placa): " + veiculo.getPlaca()
+			+ "\nVeículo (modelo): " + veiculo.getModelo()
+			+ "\nCliente: " + veiculo.getCliente().getNome()
 			+ "\nDescrição da mão de obra: " + descricaoMaoObra
 			+ "\nStatus: " + status
 			+ "\n";
