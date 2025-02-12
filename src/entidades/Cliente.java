@@ -31,7 +31,7 @@ public class Cliente {
 	}
 
 	public String toString() {
-		return "Cliente\n" + " Nome= " + nome + ", ID= " + id;
+		return "ID: " + id + "\nNome: " + nome + "\n";
 	}
 
 }

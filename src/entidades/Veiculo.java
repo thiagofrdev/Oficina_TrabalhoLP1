@@ -48,7 +48,7 @@ package entidades;
 		}
 
 		public String toString() {
-			return "Veículo\n" + " Placa= " + placa + ", Modelo= " + modelo + ", Cliente= " + cliente + ", ID= " + id;
+			return "ID: " + id + "\nPlaca: " + placa + "\nModelo: " + modelo + "\nCliente: " + cliente.getNome() + "\n";
 		}
 
 	}

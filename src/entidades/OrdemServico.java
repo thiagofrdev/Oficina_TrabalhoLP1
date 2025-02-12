@@ -86,14 +86,13 @@ public class OrdemServico {
 	}
 
 	public String toString() {
-		return "Ordem de Servico \n" + 
-			"ID: " + id
-			+ ",\nData: " + data
-			+ ",\nValor de peças: R$" + valorPecas
-			+ ",\nValor de mão de obra: R$" + valorMaoDeObra
-			+ ",\nVeículo: " + veiculo
-			+ ",\nDescrição da mão de obra: " + descricaoMaoObra
-			+ ",\nStatus: " + status
+		return "ID: " + id
+			+ "\nData: " + data
+			+ "\nValor de peças: R$" + valorPecas
+			+ "\nValor de mão de obra: R$" + valorMaoDeObra
+			+ "\nVeículo: " + veiculo
+			+ "\nDescrição da mão de obra: " + descricaoMaoObra
+			+ "\nStatus: " + status
 			+ "\n";
 	}
 
