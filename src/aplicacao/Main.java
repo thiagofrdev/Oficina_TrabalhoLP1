@@ -122,8 +122,10 @@ public class Main {
 
 				break;
 			case 10:
-				System.out.println("Imprimir ordens de serviço informando o nome do cliente");
+				System.out.print("Nome do cliente: ");
+				String nomeCliente = sc.next();
 
+				oficina.imprimirOrdensCliente(nomeCliente);
 				break;
 			case 11:
 				System.out.println("Imprimir os veículos de um cliente");
