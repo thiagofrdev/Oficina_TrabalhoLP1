@@ -25,18 +25,20 @@ public class Controle {
 	public void cadastrarVeiculo(String placa, String modelo, String nome) {		
 		boolean encontrarCliente = false;
 		for(Cliente cliente:clientes) {			
-			if(cliente.getNome() == nome) {
+			if(cliente.getNome().equals(nome)) {
 				Veiculo vc = new Veiculo(placa, modelo, cliente);
 				veiculos.add(vc);
 				encontrarCliente = true;					
-				System.out.println("Veículo cadastrado!!!");	
+				System.out.println("Veículo cadastrado!!!");
+				//Teste para ver os veículos existentes. Excluir depois	
 				for (Veiculo veiculo:veiculos){
 					System.out.println(veiculo);
 				}
 			}			
 		}	
 		if(encontrarCliente == false) {
-			System.out.print("Cliente não encontrado");	
+			System.out.print("Cliente não encontrado");
+			//Teste para ver os veículos existentes. Excluir depois		
 			for (Veiculo veiculo:veiculos){
 				System.out.println(veiculo);
 			}
