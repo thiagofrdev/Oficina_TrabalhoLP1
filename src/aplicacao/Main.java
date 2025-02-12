@@ -73,7 +73,6 @@ public class Main {
 				System.out.print("Digite o nome do cliente: ");
 				String nome = sc.nextLine();
 				oficina.cadastrarCliente(nome);
-				System.out.println("Cliente cadastrado!!!");
 				break;
 			case 3:
 				System.out.println("Cadastrar veículo");

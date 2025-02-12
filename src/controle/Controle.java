@@ -37,8 +37,14 @@ public class Controle {
 	}
 
 	public void cadastrarCliente(String nome) {
-		Cliente cl = new Cliente(nome);
-		clientes.add(cl);
+		if (getCliente(nome) == null) {
+			Cliente cl = new Cliente(nome);
+			clientes.add(cl);
+			System.out.println("Cliente cadastrado!!!");
+		} else {
+			System.out.printf("Já existe um cliente chamado '%s'\n", nome);
+		}
+		
 	}
 
 	public String imprimirOrdens() {
@@ -111,6 +117,15 @@ public class Controle {
 		for (Veiculo veiculo : veiculos) {
 			if (veiculo.getPlaca().equalsIgnoreCase(placaVeiculo)) {
 				return veiculo;
+			}
+		}
+		return null;
+	}
+
+	public Cliente getCliente(String nomeCliente) {
+		for (Cliente c : clientes) {
+			if (c.getNome().equals(nomeCliente)) {
+				return c;
 			}
 		}
 		return null;
