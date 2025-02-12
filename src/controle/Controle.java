@@ -25,14 +25,21 @@ public class Controle {
 	public void cadastrarVeiculo(String placa, String modelo, String nome) {		
 		boolean encontrarCliente = false;
 		for(Cliente cliente:clientes) {			
-			if(cliente.getNome()==nome) {
+			if(cliente.getNome() == nome) {
 				Veiculo vc = new Veiculo(placa, modelo, cliente);
 				veiculos.add(vc);
-				encontrarCliente = true;			
+				encontrarCliente = true;					
+				System.out.println("Veículo cadastrado!!!");	
+				for (Veiculo veiculo:veiculos){
+					System.out.println(veiculo);
+				}
 			}			
 		}	
 		if(encontrarCliente == false) {
 			System.out.print("Cliente não encontrado");	
+			for (Veiculo veiculo:veiculos){
+				System.out.println(veiculo);
+			}
 		}		
 	}
 
@@ -77,7 +84,7 @@ public class Controle {
 	}
 
 	public String imprimirOrdensCliente(String nomeCliente) {
-	
+		
 		return null;
 	}
 
