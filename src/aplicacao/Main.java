@@ -90,8 +90,8 @@ public class Main {
 				oficina.imprimirClientes();
 				break;
 			case 5:
-				System.out.println("Imprimir todos os veículos cadastrados");
-
+				System.out.println("Imprimir todos os veículos cadastrados"); 
+    			System.out.println(oficina.imprimirVeiculos());
 				break;
 			case 6:
 				System.out.println("Imprimir todas as ordens de serviço");
@@ -99,7 +99,6 @@ public class Main {
 				break;
 			case 7:
 				System.out.println("Alterar uma OS informando valor das peças, descrição e valor da mão de obra");
-
 				break;
 			case 8:
 				System.out.println("Alterar o status de OS");

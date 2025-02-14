@@ -55,8 +55,21 @@ public class Controle {
 	}
 
 	public String imprimirVeiculos() {
-		return null;
-	}
+		if (veiculos.isEmpty()) {
+			return "Nenhum veículo cadastrado.";
+		}
+	
+		StringBuilder sb = new StringBuilder();
+		sb.append("===== Lista de Veículos Cadastrados =====\n");
+		
+		for (Veiculo v : veiculos) {
+			sb.append(v.toString()).append("\n");
+		}
+	
+		return sb.toString();
+		
+    }
+	
 
 	public String imprimirClientes() {
 		for (Cliente cliente:clientes) {
@@ -66,7 +79,16 @@ public class Controle {
 	}
 
 	public void alterarValoresOS(int idOrdem, double valorPecas, double valorMaoDeObra, String descricao) {
-	
+		for (OrdemServico os : ordens) {
+			if (os.getId() == idOrdem) {
+				os.setValorPecas(valorPecas);
+				os.setValorMaoDeObra(valorMaoDeObra);
+				os.setDescricaoMaoObra(descricao);
+				System.out.println("Ordem de serviço atualizada com sucesso!");
+				return; 
+			}
+		}
+		System.out.println("Ordem de serviço não encontrada com o ID fornecido.");
 	}
 
 	public void alterarStatusOS(int idOrdem, Status status) {
