@@ -61,9 +61,12 @@ public class Controle {
 	
 		StringBuilder sb = new StringBuilder();
 		sb.append("===== Lista de Veículos Cadastrados =====\n");
-		
+	
 		for (Veiculo v : veiculos) {
-			sb.append(v.toString()).append("\n");
+			sb.append("ID: ").append(v.getId())
+			  .append(" | Placa: ").append(v.getPlaca())
+			  .append(" | Modelo: ").append(v.getModelo())
+			  .append("\n");
 		}
 	
 		return sb.toString();

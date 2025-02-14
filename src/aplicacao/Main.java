@@ -28,10 +28,10 @@ public class Main {
 					   (7) Alterar uma OS informando valor das peças, descrição e valor da mão de obra"
 					   (8) Alterar o status de uma OS informando o ID e o status"
 					   (9) Imprimir ordens de serviço informando a placa do carro"
-					  (10) Imprimir ordens de serviço informando o nome do cliente"
-					  (11) Imprimir os veículos de um cliente"
-					  (12) Imprimir as ordens de serviço por status"
-					  (13) Imprimir ordens de serviço de um períod"
+					   (10) Imprimir ordens de serviço informando o nome do cliente"
+					   (11) Imprimir os veículos de um cliente"
+					   (12) Imprimir as ordens de serviço por status"
+					   (13) Imprimir ordens de serviço de um períod"
 
 						""");
 			System.out.println();
