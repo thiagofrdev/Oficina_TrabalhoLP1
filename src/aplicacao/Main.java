@@ -102,7 +102,6 @@ public class Main {
 				break;
 			case 7:
 				System.out.println("Alterar uma OS informando valor das peças, descrição e valor da mão de obra");
-				oficina.imprimirOrdens();
 				System.out.print("ID da OS: ");
     			int idOS = sc.nextInt();
     			System.out.print("Novo valor das peças (XXX,XX): ");
