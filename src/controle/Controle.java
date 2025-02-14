@@ -83,16 +83,17 @@ public class Controle {
 
 	public void alterarValoresOS(int idOrdem, double valorPecas, double valorMaoDeObra, String descricao) {
 		for (OrdemServico os : ordens) {
-			if (os.getId() == idOrdem) {
-				os.setValorPecas(valorPecas);
-				os.setValorMaoDeObra(valorMaoDeObra);
-				os.setDescricaoMaoObra(descricao);
-				System.out.println("Ordem de serviço atualizada com sucesso!");
-				return; 
-			}
-		}
-		System.out.println("Ordem de serviço não encontrada com o ID fornecido.");
-	}
+            if (os.getId() == idOrdem) {
+                os.setValorPecas(valorPecas);
+                os.setValorMaoDeObra(valorMaoDeObra);
+                os.setDescricaoMaoObra(descricao);
+                System.out.println("Ordem de Serviço atualizada com sucesso!");
+                return;
+            }
+        }
+        System.out.printf("Não existe uma OS com o ID %d\n", idOrdem);
+    }
+	
 
 	public void alterarStatusOS(int idOrdem, Status status) {
 		for (OrdemServico os : ordens){

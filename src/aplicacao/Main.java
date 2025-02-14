@@ -62,6 +62,9 @@ public class Main {
 
 					Date data=new Date();
 					oficina.criarOS(data, valorPecas, valorMaoDeObra, oficina.getVeiculo(placa), descricao, status);
+					OrdemServico os = oficina.imprimirOrdensId(OrdemServico.getGeradorId()); 
+        			System.out.println("Ordem de serviço criada com sucesso:");
+        			System.out.println(os.toString());
 					break;
 				} else {
 					System.out.printf("Não existe um veiculo cadastrado com a placa '%s'", placa);
@@ -99,6 +102,17 @@ public class Main {
 				break;
 			case 7:
 				System.out.println("Alterar uma OS informando valor das peças, descrição e valor da mão de obra");
+				oficina.imprimirOrdens();
+				System.out.print("ID da OS: ");
+    			int idOS = sc.nextInt();
+    			System.out.print("Novo valor das peças (XXX,XX): ");
+   				double novoValorPecas = sc.nextDouble();
+    			System.out.print("Novo valor da mão de obra (XXX,XX): ");
+    			double novoValorMaoDeObra = sc.nextDouble();
+    			sc.nextLine();
+    			System.out.print("Nova descrição da mão de obra: ");
+    			String novaDescricao = sc.nextLine();
+    			oficina.alterarValoresOS(idOS, novoValorPecas, novoValorMaoDeObra, novaDescricao);
 				break;
 			case 8:
 				System.out.println("Alterar o status de OS");
