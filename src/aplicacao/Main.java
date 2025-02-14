@@ -91,7 +91,8 @@ public class Main {
 				break;
 			case 5:
 				System.out.println("Imprimir todos os veículos cadastrados");
-
+				String veiculosCadastrados = oficina.imprimirVeiculos(); 
+    			System.out.println(veiculosCadastrados);
 				break;
 			case 6:
 				System.out.println("Imprimir todas as ordens de serviço");

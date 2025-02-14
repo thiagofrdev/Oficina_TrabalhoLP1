@@ -55,7 +55,11 @@ public class Controle {
 	}
 
 	public String imprimirVeiculos() {
-		return null;
+		StringBuilder sb = new StringBuilder();
+    for (Veiculo veiculo : veiculos) {
+        sb.append(veiculo.toString()).append("\n"); // Usa o método toString() da classe Veiculo
+    }
+    return sb.toString();
 	}
 
 	public String imprimirClientes() {
