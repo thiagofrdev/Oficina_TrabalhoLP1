@@ -44,9 +44,9 @@ public class Main {
 				break;
 			case 1:
 				System.out.println("Criar ordem de serviço");
-				System.out.print("Valor das peças: ");
+				System.out.print("Valor das peças (XXX,XX): ");
 				double valorPecas = sc.nextDouble();
-				System.out.print("Valor da mão de obra: ");
+				System.out.print("Valor da mão de obra (XXX,XX): ");
 				double valorMaoDeObra = sc.nextDouble();
 				sc.nextLine();
 				System.out.print("Placa do veículo: ");
@@ -77,7 +77,7 @@ public class Main {
 			case 3:
 				System.out.println("Cadastrar veículo");
 				System.out.print("Digite a placa do veículo: ");
-				String placa2 = sc.nextLine();
+				String placa2 = sc.next();
 				sc.nextLine();
 				System.out.print("Digite o modelo do veículo: ");
 				String modelo = sc.nextLine();			
