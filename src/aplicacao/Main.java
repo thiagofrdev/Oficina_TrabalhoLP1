@@ -77,11 +77,12 @@ public class Main {
 			case 3:
 				System.out.println("Cadastrar veículo");
 				System.out.print("Digite a placa do veículo: ");
-				String placa2 = sc.next();
+				String placa2 = sc.nextLine();
+				sc.nextLine();
 				System.out.print("Digite o modelo do veículo: ");
-				String modelo = sc.next();
+				String modelo = sc.nextLine();			
 				System.out.print("Digite o nome do cliente: ");
-				String nomeDoCliente = sc.next();
+				String nomeDoCliente = sc.nextLine();
 				oficina.cadastrarVeiculo(placa2, modelo, nomeDoCliente);
 				break;
 			case 4:
@@ -121,7 +122,9 @@ public class Main {
 				break;
 			case 9:
 				System.out.println("Imprimir ordens de serviço informando a placa do carro");
-
+				System.out.println("Digite a placa do carro: ");
+				String ordensPlaca = sc.nextLine();
+				System.out.println(oficina.imprimirOrdensPlaca(ordensPlaca));
 				break;
 			case 10:
 				System.out.print("Nome do cliente: ");

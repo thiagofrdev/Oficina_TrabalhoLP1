@@ -78,7 +78,16 @@ public class Controle {
 	}
 
 	public String imprimirOrdensPlaca(String placaVeiculo) {
-	
+		for (Veiculo vc : veiculos){
+			if(vc.getPlaca() == placaVeiculo){
+				for (OrdemServico os : ordens){
+					if (os.getVeiculo() == vc)
+						return "Ordem encontrada: " + os.getVeiculo();
+				}
+			} else {
+				return "Placa não encontrada";
+			}
+		}
 		return null;
 	}
 
