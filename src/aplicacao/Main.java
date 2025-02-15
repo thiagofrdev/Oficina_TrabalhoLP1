@@ -103,60 +103,12 @@ public class Main {
 					String nomeDoCliente = sc.nextLine();
 					oficina.cadastrarVeiculo(placa2, modelo, nomeDoCliente);
 					break;
-				}				
-			case 2:
-				System.out.println("Cadastrar cliente");
-				sc.nextLine();
-				System.out.print("Digite o nome do cliente: ");
-				String nome = sc.nextLine();
-				oficina.cadastrarCliente(nome);
-				break;
-			case 3:
-				System.out.println("Cadastrar veículo");
-				System.out.print("Digite a placa do veículo: ");
-				String placa2 = sc.next();
-				sc.nextLine();
-				System.out.print("Digite o modelo do veículo: ");
-				String modelo = sc.nextLine();			
-				System.out.print("Digite o nome do cliente: ");
-				String nomeDoCliente = sc.nextLine();
-				oficina.cadastrarVeiculo(placa2, modelo, nomeDoCliente);
-				break;
-			case 4:
-				System.out.println("Imprimir todos os clientes cadastrados");
-				oficina.imprimirClientes();
-				break;
-			case 5:
-				System.out.println("Imprimir todos os veículos cadastrados"); 
-    			System.out.println(oficina.imprimirVeiculos());
-				break;
-			case 6:
-				System.out.println("Imprimir todas as ordens de serviço");
-				oficina.imprimirOrdens();
-				break;
-			case 7:
-				System.out.println("Alterar uma OS informando valor das peças, descrição e valor da mão de obra");
-				System.out.print("ID da OS: ");
-				int idOS = sc.nextInt();
-    			System.out.print("Novo valor das peças (XXX,XX): ");
-   				double novoValorPecas = sc.nextDouble();
-    			System.out.print("Novo valor da mão de obra (XXX,XX): ");
-    			double novoValorMaoDeObra = sc.nextDouble();
-    			sc.nextLine();
-    			System.out.print("Nova descrição da mão de obra: ");
-    			String novaDescricao = sc.nextLine();
-    			oficina.alterarValoresOS(idOS, novoValorPecas, novoValorMaoDeObra, novaDescricao);
-				break;
-			case 8:
-				System.out.println("Alterar o status de OS");
-				System.out.print("ID da OS: ");
-				int id = sc.nextInt();
-
-				OrdemServico os = oficina.imprimirOrdensId(id);
-				if (os == null) {
-					break;
+				case 4:
+					System.out.println("Imprimir todos os clientes cadastrados");
+					oficina.imprimirClientes();
+					break;				
 				case 5:
-					System.out.println("Imprimir todos os veículos cadastrados");
+					System.out.println("Imprimir todos os veículos cadastrados"); 
 					System.out.println(oficina.imprimirVeiculos());
 					break;
 				case 6:
