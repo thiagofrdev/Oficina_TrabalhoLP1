@@ -49,6 +49,10 @@ public class Controle {
 	}
 
 	public String imprimirOrdens() {
+		if (veiculos.isEmpty()) {
+			return "Nenhum veículo cadastrado.";
+		}
+
 		for (OrdemServico os : ordens) {
 			System.out.println(os);
 		}
@@ -100,20 +104,27 @@ public class Controle {
 				os.setStatus(status);
 			}
 		}
+		System.out.println("Alteração feita com sucesso!");
 	}
 
 	public String imprimirOrdensPlaca(String placaVeiculo) {
-		for (Veiculo vc : veiculos) {
-			if (vc.getPlaca() == placaVeiculo) {
-				for (OrdemServico os : ordens) {
-					if (os.getVeiculo() == vc)
-						return "Ordem encontrada: " + os.getVeiculo();
+		if (!veiculos.isEmpty()) {
+			for (Veiculo vc : veiculos) {
+				if (placaVeiculo.equals(vc.getPlaca())) {
+					if (!ordens.isEmpty()){
+						for (OrdemServico os : ordens) {
+							if (os.getVeiculo().getPlaca().equals(vc.getPlaca()))
+								return "Ordem encontrada: " + os.getVeiculo();
+						}
+					} else {
+						return "Não há Ordens de Serviço cadastradas!";
+					}					
 				}
-			} else {
-				return "Placa não encontrada";
 			}
+		} else {
+			return "Não há veículos cadastrados!";
 		}
-		return null;
+		return "Placa não encontrada";
 	}
 
 	public String imprimirOrdensCliente(String nomeCliente) {

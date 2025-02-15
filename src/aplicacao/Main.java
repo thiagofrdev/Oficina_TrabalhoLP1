@@ -149,7 +149,8 @@ public class Main {
 					break;
 				case 9:
 					System.out.println("Imprimir ordens de serviço informando a placa do carro");
-					System.out.println("Digite a placa do carro: ");
+					sc.nextLine();
+					System.out.print("Digite a placa do carro: ");
 					String ordensPlaca = sc.nextLine();
 					System.out.println(oficina.imprimirOrdensPlaca(ordensPlaca));
 					break;
