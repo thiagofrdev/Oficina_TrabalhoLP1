@@ -97,7 +97,7 @@ Contribuições para melhorias são bem-vindas! Caso encontre bugs ou tenha suge
   - GitHub: 
   - Linkedin: https://www.linkedin.com/in/gabryelleduartem/
 
-- Hellen Santos
+- Helen Santos
   - GitHub: https://github.com/sunHelen12
   - Linkedin: https://www.linkedin.com/in/helen-santos-dev/
 
