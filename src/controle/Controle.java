@@ -134,15 +134,15 @@ public class Controle {
 						econtrouVeiculo = true;							
 					}
 					
-				}				
+				}
+				if(econtrouVeiculo == false){
+					System.out.println("O cliente " + nomeCliente + " não possui veículos cadastrados!");
+					
+				}			
 							
 			}			
 		}
 		
-		if(econtrouVeiculo == false){
-			System.out.println("O cliente " + nomeCliente + " não possui veículos cadastrados!");
-			
-		}
 
 		if(encontrouCliente == false){
 			System.out.println("O cliente " + nomeCliente + " não foi cadastrado!");

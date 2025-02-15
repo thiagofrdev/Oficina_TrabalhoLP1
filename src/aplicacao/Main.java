@@ -144,9 +144,9 @@ public class Main {
 				case 11:
 					System.out.println("Imprimir os veículos de um cliente");
 					oficina.imprimirClientes();
-					System.out.print("Digite o nome do cliente que deseja consultar: ");
-					String cliente = sc.nextLine();
 					sc.nextLine();
+					System.out.print("Digite o nome do cliente que deseja consultar: ");
+					String cliente = sc.nextLine();					
 					System.out.println(oficina.imprimirVeiculosCliente(cliente));
 					break;
 				case 12:
