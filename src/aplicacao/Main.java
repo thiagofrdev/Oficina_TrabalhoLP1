@@ -103,7 +103,7 @@ public class Main {
 			case 7:
 				System.out.println("Alterar uma OS informando valor das peças, descrição e valor da mão de obra");
 				System.out.print("ID da OS: ");
-    			int idOS = sc.nextInt();
+				int idOS = sc.nextInt();
     			System.out.print("Novo valor das peças (XXX,XX): ");
    				double novoValorPecas = sc.nextDouble();
     			System.out.print("Novo valor da mão de obra (XXX,XX): ");
