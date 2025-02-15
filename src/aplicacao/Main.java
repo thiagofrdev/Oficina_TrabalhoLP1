@@ -1,3 +1,7 @@
+/*
+ * TRABALHO: OFICINA
+ * DISCENTES: Gabryelle Duarte, Helen Santos, Maria Eduarda e Thiago Ferreira
+ */
 package aplicacao;
 
 import controle.Controle;
