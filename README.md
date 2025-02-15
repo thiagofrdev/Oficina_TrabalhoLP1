@@ -34,7 +34,7 @@ O projeto segue a estrutura descrita no diagrama fornecido no enunciado e possui
 Siga os passos abaixo para clonar o repositório, compilar e executar o programa.
 
 ### 1. Requisitos Prévios ✅
-- **Java JDK 17 ou superior** instalado no seu computador.
+- **Java JDK 8 ou superior** instalado no seu computador.
 - Um **IDE** (como IntelliJ IDEA, Eclipse, ou VS Code) ou um terminal com suporte para comandos `javac` e `java`.
 
 ### 2. Clonar o Repositório 🌐⬇️
