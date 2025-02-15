@@ -1,0 +1,69 @@
+{
+    "clientes": {
+        "nomes": "Gabryelle Duarte, Helen Santos, Maria Eduarda, Thiago Ferreira"
+    },
+
+    "veiculos": [
+        {
+            "placa": "ABC1234D",
+            "modelo": "BYD"
+        }, 
+        {
+            "placa": "QWE4536R",
+            "modelo": "Gurgel"
+        },
+        {
+            "placa": "GHT4542D",
+            "modelo": "Camaro Amarelo"
+        },
+        {
+            "placa": "VDR3492T",
+            "modelo": "Uno com escada no teto"
+        },
+        {
+            "placa": "PLE3201R",
+            "modelo": "Fusca"
+        },
+        {
+            "placa": "OPW2094E",
+            "modelo": "Brasíla"
+        },
+        {
+            "placa": "CKE3092O",
+            "modelo": "Opalão"
+        }
+    ],
+
+    "Ordem de Serviço": [
+        {
+            "Valor das peças": "5205,25",
+            "Valor mão de obra": "335,00",
+            "Descrição": "Troca de Pneus"
+        },
+        {
+            "Valor das peças": "420,00",
+            "Valor mão de obra": "100,00",
+            "Descrição": "Troca das lasternas traseiras"
+        },
+        {
+            "Valor das peças": "1200,00",
+            "Valor mão de obra": "550,50",
+            "Descrição": "Plimento da pintura"
+        },
+        {
+            "Valor das peças": "3147,87",
+            "Valor mão de obra": "200,00",
+            "Descrição": "Troca vidros traseiros"
+        },
+        {
+            "Valor das peças": "10350,50",
+            "Valor mão de obra": "670,00",
+            "Descrição": "Instalação de ar-condicionado automático"
+        },
+        {
+            "Valor das peças": "300,00",
+            "Valor mão de obra": "800,00",
+            "Descrição": "Intalação de um porta calcinhas secreto em baixo do banco do motorista"
+        }
+    ]
+}
