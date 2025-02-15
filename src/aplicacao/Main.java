@@ -15,7 +15,7 @@ public class Main {
 		do {
 			System.out.print("""
 					========================================================================================
-										MENU OFICINA
+									       MENU OFICINA
 					========================================================================================
 					   (0) Sair
 					   (1) Criar ordem de serviço
@@ -147,6 +147,7 @@ public class Main {
 				System.out.println("Imprimir os veículos de um cliente");
 				System.out.print("Escolha o ID do cliente que deseja consultar: ");
 				oficina.imprimirClientes();
+				System.err.println("");
 
 				break;
 			case 12:
