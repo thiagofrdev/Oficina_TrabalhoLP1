@@ -19,7 +19,7 @@ public class Controle {
 			String descricaoMaoObra, Status status) {
 		OrdemServico os = new OrdemServico(data, valorPecas, valorMaoDeObra, veiculo, descricaoMaoObra, status);
 		ordens.add(os);
-		System.out.println("Ordem cadastrada!!!");
+		System.out.println("\nOrdem de Serviço criada com sucesso:");
 	}
 
 	public void cadastrarVeiculo(String placa, String modelo, String nome) {
@@ -75,14 +75,23 @@ public class Controle {
 		}
 
 		return sb.toString();
-
 	}
 
 	public String imprimirClientes() {
-		for (Cliente cliente : clientes) {
-			System.out.println(cliente);
+		if (clientes.isEmpty()) {
+			return "Nenhum cliente cadastrado.";
 		}
-		return null;
+	
+		StringBuilder sb = new StringBuilder();
+		sb.append("===== Lista de Clientes Cadastrados =====\n");
+	
+		for (Cliente cliente : clientes) {
+			sb.append("ID: ").append(cliente.getId())
+			  .append(" | Nome: ").append(cliente.getNome())
+			  .append("\n");
+		}
+	
+		return sb.toString();
 	}
 
 	public void alterarValoresOS(int idOrdem, double valorPecas, double valorMaoDeObra, String descricao) {
@@ -92,7 +101,7 @@ public class Controle {
 				os.setValorMaoDeObra(valorMaoDeObra);
 				os.setDescricaoMaoObra(descricao);
 				System.out.println("Ordem de Serviço atualizada com sucesso!");
-				return;
+				System.out.println(os);
 			}
 		}
 		System.out.printf("Não existe uma OS com o ID %d\n", idOrdem);
@@ -102,9 +111,10 @@ public class Controle {
 		for (OrdemServico os : ordens) {
 			if (os.getId() == idOrdem) {
 				os.setStatus(status);
+				System.out.println("Alteração feita com sucesso!");
+				System.out.println(os);
 			}
-		}
-		System.out.println("Alteração feita com sucesso!");
+		}		
 	}
 
 	public String imprimirOrdensPlaca(String placaVeiculo) {
@@ -114,7 +124,7 @@ public class Controle {
 					if (!ordens.isEmpty()){
 						for (OrdemServico os : ordens) {
 							if (os.getVeiculo().getPlaca().equals(vc.getPlaca()))
-								return "Ordem encontrada: " + os.getVeiculo();
+								return "Ordem encontrada: \n" + os;
 						}
 					} else {
 						return "Não há Ordens de Serviço cadastradas!";

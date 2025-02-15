@@ -78,8 +78,6 @@ public class Main {
 
 						oficina.criarOS(data, valorPecas, valorMaoDeObra, oficina.getVeiculo(placa), descricao, status);
 						OrdemServico os = oficina.imprimirOrdensId(OrdemServico.getGeradorId());
-						System.out.println("Ordem de serviço criada com sucesso:");
-						System.out.println(os.toString());
 						break;
 					} else {
 						System.out.printf("Não existe um veiculo cadastrado com a placa '%s'", placa);
@@ -105,7 +103,7 @@ public class Main {
 					break;
 				case 4:
 					System.out.println("Imprimir todos os clientes cadastrados");
-					oficina.imprimirClientes();
+					System.out.println(oficina.imprimirClientes());
 					break;				
 				case 5:
 					System.out.println("Imprimir todos os veículos cadastrados"); 
@@ -132,6 +130,7 @@ public class Main {
 					break;
 				case 8:
 					System.out.println("Alterar o status de OS");
+					oficina.imprimirOrdens();
 					System.out.print("ID da OS: ");
 					int id = sc.nextInt();
 
@@ -140,7 +139,7 @@ public class Main {
 						break;
 					}
 
-					System.out.print("Novo Status (1-ABERTA, 2-EM_ANDAMENTO, 3-CONCLUIDA): ");
+					System.out.print("Novo Status (Número): ([1] ABERTA, [2] EM ANDAMENTO, [3] CONCLUIDA): ");
 					int novoStatusInt = sc.nextInt();
 					Status novoStatus = novoStatusInt == 1 ? Status.ABERTA
 							: novoStatusInt == 2 ? Status.EMANDAMENTO : Status.CONCLUIDA;

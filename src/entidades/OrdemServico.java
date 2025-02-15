@@ -89,16 +89,21 @@ public class OrdemServico {
 	}
 
 	public String toString() {
-		return "ID: " + id
-				+ "\nData: " + data.format(formatoSaida)
-				+ "\nValor de peças: R$" + valorPecas
-				+ "\nValor de mão de obra: R$" + valorMaoDeObra
-				+ "\nVeículo (placa): " + veiculo.getPlaca()
-				+ "\nVeículo (modelo): " + veiculo.getModelo()
-				+ "\nCliente: " + veiculo.getCliente().getNome()
-				+ "\nDescrição da mão de obra: " + descricaoMaoObra
-				+ "\nStatus: " + status
-				+ "\n";
-	}
+		StringBuilder sb = new StringBuilder();
+    sb.append("=====================================================\n")
+      .append("|                 ORDEM DE SERVIÇO                  |\n")
+      .append("=====================================================\n")
+      .append(String.format("| %-23s: %-24s |\n", "ID", id))
+      .append(String.format("| %-23s: %-24s |\n", "Data", data.format(formatoSaida)))
+      .append(String.format("| %-23s: R$%-22.2f |\n", "Valor de peças", valorPecas))
+      .append(String.format("| %-23s: R$%-22.2f |\n", "Valor de mão de obra", valorMaoDeObra))
+      .append(String.format("| %-23s: %-24s |\n", "Placa do veículo", veiculo.getPlaca()))
+      .append(String.format("| %-23s: %-24s |\n", "Modelo do veículo", veiculo.getModelo()))
+      .append(String.format("| %-23s: %-24s |\n", "Cliente", veiculo.getCliente().getNome()))
+      .append(String.format("| %-23s: %-24s |\n", "Descrição", descricaoMaoObra))
+      .append(String.format("| %-23s: %-24s |\n", "Status", status))
+      .append("=====================================================\n");
 
+		return sb.toString();
+	}
 }
