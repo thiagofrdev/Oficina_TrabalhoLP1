@@ -3,14 +3,18 @@ package aplicacao;
 import controle.Controle;
 import entidades.OrdemServico;
 import enums.Status;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Controle oficina = new Controle();
+		DateTimeFormatter formato =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+		
 		int resp;
 		do {
 			System.out.print("""
@@ -59,7 +63,19 @@ public class Main {
 						Status status = statusInt == 1 ? Status.ABERTA
 								: statusInt == 2 ? Status.EMANDAMENTO : Status.CONCLUIDA;
 
-						Date data = new Date();
+						LocalDate data = null;
+						boolean dataValida = false;
+						do {
+							System.out.print("Digite a data (DD/MM/AAAA): ");
+							String dataInserida = sc.next();
+							try {
+								data = LocalDate.parse(dataInserida, formato);
+								dataValida = true; 
+							} catch (DateTimeParseException e) {
+								System.out.println("Formato de data inválido. Tente novamente!");
+							}
+						} while (!dataValida);
+
 						oficina.criarOS(data, valorPecas, valorMaoDeObra, oficina.getVeiculo(placa), descricao, status);
 						OrdemServico os = oficina.imprimirOrdensId(OrdemServico.getGeradorId());
 						System.out.println("Ordem de serviço criada com sucesso:");
@@ -137,9 +153,9 @@ public class Main {
 					break;
 				case 10:
 					System.out.print("Nome do cliente: ");
-					String nomeCliente = sc.next();
-
-					oficina.imprimirOrdensCliente(nomeCliente);
+					sc.nextLine();
+					String nomeCliente = sc.nextLine();
+					System.err.println(oficina.imprimirOrdensCliente(nomeCliente));
 					break;
 				case 11:
 					System.out.println("Imprimir os veículos de um cliente");
@@ -151,11 +167,20 @@ public class Main {
 					break;
 				case 12:
 					System.out.println("Imprimir as ordens de serviço por status");
-
+					System.out.println("Status disponíveis: (ABERTA, EM ANDAMENTO, CONCLUIDA): ");
+					sc.nextLine();					
+					System.out.print("Digite o Status: ");
+					String status = sc.nextLine();
+					System.out.println(oficina.imprimirOrdensStatus(status));					
 					break;
 				case 13:
 					System.out.println("Imprimir ordens de serviço de um período");
-
+					sc.nextLine();
+					System.out.print("Digite a data inicial do período (DD/MM/AAAA): ");
+					LocalDate dataInicial = LocalDate.parse(sc.next(), formato);
+					System.out.print("Digite a data final do período (DD/MM/AAAA): ");
+					LocalDate dataFinal = LocalDate.parse(sc.next(), formato);
+					System.out.println(oficina.imprimirOrdensPeriodo(dataInicial, dataFinal));					
 					break;
 				default:
 					System.out.println("Opção inválida!");

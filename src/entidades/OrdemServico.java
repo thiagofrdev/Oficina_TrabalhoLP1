@@ -1,11 +1,12 @@
 package entidades;
 
-import java.util.Date;
 import enums.Status;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class OrdemServico {
 	private int id;
-	private Date data;
+	private LocalDate data;
 	private double valorPecas;
 	private double valorMaoDeObra;
 	private Veiculo veiculo;
@@ -13,7 +14,9 @@ public class OrdemServico {
 	private static int geradorId;
 	private Status status;
 
-	public OrdemServico(Date data, double valorPecas, double valorMaoDeObra, Veiculo veiculo, String descricaoMaoObra,
+	DateTimeFormatter formatoSaida = DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy");
+
+	public OrdemServico(LocalDate data, double valorPecas, double valorMaoDeObra, Veiculo veiculo, String descricaoMaoObra,
 			Status status) {
 		geradorId++;
 		this.id = geradorId;
@@ -33,11 +36,11 @@ public class OrdemServico {
 		return id;
 	}
 
-	public Date getData() {
+	public LocalDate getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(LocalDate data) {
 		this.data = data;
 	}
 
@@ -87,15 +90,15 @@ public class OrdemServico {
 
 	public String toString() {
 		return "ID: " + id
-			+ "\nData: " + data
-			+ "\nValor de peças: R$" + valorPecas
-			+ "\nValor de mão de obra: R$" + valorMaoDeObra
-			+ "\nVeículo (placa): " + veiculo.getPlaca()
-			+ "\nVeículo (modelo): " + veiculo.getModelo()
-			+ "\nCliente: " + veiculo.getCliente().getNome()
-			+ "\nDescrição da mão de obra: " + descricaoMaoObra
-			+ "\nStatus: " + status
-			+ "\n";
+				+ "\nData: " + data.format(formatoSaida)
+				+ "\nValor de peças: R$" + valorPecas
+				+ "\nValor de mão de obra: R$" + valorMaoDeObra
+				+ "\nVeículo (placa): " + veiculo.getPlaca()
+				+ "\nVeículo (modelo): " + veiculo.getModelo()
+				+ "\nCliente: " + veiculo.getCliente().getNome()
+				+ "\nDescrição da mão de obra: " + descricaoMaoObra
+				+ "\nStatus: " + status
+				+ "\n";
 	}
 
 }
