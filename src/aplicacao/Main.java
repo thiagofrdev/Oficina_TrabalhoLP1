@@ -1,11 +1,10 @@
 package aplicacao;
 
-import java.util.Date;
-import java.util.Scanner;
-
 import controle.Controle;
 import entidades.OrdemServico;
 import enums.Status;
+import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
@@ -16,22 +15,22 @@ public class Main {
 		do {
 			System.out.print("""
 					========================================================================================
-													   MENU OFICINA
+										MENU OFICINA
 					========================================================================================
 					   (0) Sair
 					   (1) Criar ordem de serviço
 					   (2) Cadastrar cliente
 					   (3) Cadastrar veículo
 					   (4) Imprimir todos os clientes cadastrados
-					   (5) Imprimir todos os veículos cadastrados"
-					   (6) Imprimir todas as ordens de serviço"
-					   (7) Alterar uma OS informando valor das peças, descrição e valor da mão de obra"
-					   (8) Alterar o status de uma OS informando o ID e o status"
-					   (9) Imprimir ordens de serviço informando a placa do carro"
-					   (10) Imprimir ordens de serviço informando o nome do cliente"
-					   (11) Imprimir os veículos de um cliente"
-					   (12) Imprimir as ordens de serviço por status"
-					   (13) Imprimir ordens de serviço de um períod"
+					   (5) Imprimir todos os veículos cadastrados
+					   (6) Imprimir todas as ordens de serviço
+					   (7) Alterar uma OS informando valor das peças, descrição e valor da mão de obra
+					   (8) Alterar o status de uma OS informando o ID e o status
+					   (9) Imprimir ordens de serviço informando a placa do carro
+					   (10) Imprimir ordens de serviço informando o nome do cliente
+					   (11) Imprimir os veículos de um cliente
+					   (12) Imprimir as ordens de serviço por status
+					   (13) Imprimir ordens de serviço de um período
 
 						""");
 			System.out.println();
@@ -94,7 +93,7 @@ public class Main {
 				break;
 			case 5:
 				System.out.println("Imprimir todos os veículos cadastrados"); 
-    			System.out.println(oficina.imprimirVeiculos());
+    			oficina.imprimirVeiculos();
 				break;
 			case 6:
 				System.out.println("Imprimir todas as ordens de serviço");
@@ -146,6 +145,8 @@ public class Main {
 				break;
 			case 11:
 				System.out.println("Imprimir os veículos de um cliente");
+				System.out.print("Escolha o ID do cliente que deseja consultar: ");
+				oficina.imprimirClientes();
 
 				break;
 			case 12:
