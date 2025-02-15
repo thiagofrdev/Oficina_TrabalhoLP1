@@ -38,129 +38,128 @@ public class Main {
 			resp = sc.nextInt();
 
 			switch (resp) {
-			case 0:
-				System.out.println("Saindo do sistema...");
-				break;
-			case 1:
-				System.out.println("Criar ordem de serviço");
-				System.out.print("Valor das peças (XXX,XX): ");
-				double valorPecas = sc.nextDouble();
-				System.out.print("Valor da mão de obra (XXX,XX): ");
-				double valorMaoDeObra = sc.nextDouble();
-				sc.nextLine();
-				System.out.print("Placa do veículo: ");
-				String placa = sc.nextLine();
-				if(oficina.getVeiculo(placa) != null){ 
-					System.out.print("Descrição da mão de obra: ");
-					String descricao = sc.nextLine();
-					System.out.print("Status (1-ABERTA, 2-EM_ANDAMENTO, 3-CONCLUIDA): ");
-					int statusInt = sc.nextInt();
+				case 0:
+					System.out.println("Saindo do sistema...");
+					break;
+				case 1:
+					System.out.println("Criar ordem de serviço");
+					System.out.print("Valor das peças (XXX,XX): ");
+					double valorPecas = sc.nextDouble();
+					System.out.print("Valor da mão de obra (XXX,XX): ");
+					double valorMaoDeObra = sc.nextDouble();
 					sc.nextLine();
-					Status status = statusInt == 1 ? Status.ABERTA
-							: statusInt == 2 ? Status.EMANDAMENTO : Status.CONCLUIDA;
+					System.out.print("Placa do veículo: ");
+					String placa = sc.nextLine();
+					if (oficina.getVeiculo(placa) != null) {
+						System.out.print("Descrição da mão de obra: ");
+						String descricao = sc.nextLine();
+						System.out.print("Status (1-ABERTA, 2-EM_ANDAMENTO, 3-CONCLUIDA): ");
+						int statusInt = sc.nextInt();
+						sc.nextLine();
+						Status status = statusInt == 1 ? Status.ABERTA
+								: statusInt == 2 ? Status.EMANDAMENTO : Status.CONCLUIDA;
 
-					Date data=new Date();
-					oficina.criarOS(data, valorPecas, valorMaoDeObra, oficina.getVeiculo(placa), descricao, status);
-					OrdemServico os = oficina.imprimirOrdensId(OrdemServico.getGeradorId()); 
-        			System.out.println("Ordem de serviço criada com sucesso:");
-        			System.out.println(os.toString());
+						Date data = new Date();
+						oficina.criarOS(data, valorPecas, valorMaoDeObra, oficina.getVeiculo(placa), descricao, status);
+						OrdemServico os = oficina.imprimirOrdensId(OrdemServico.getGeradorId());
+						System.out.println("Ordem de serviço criada com sucesso:");
+						System.out.println(os.toString());
+						break;
+					} else {
+						System.out.printf("Não existe um veiculo cadastrado com a placa '%s'", placa);
+						break;
+					}
+				case 2:
+					System.out.println("Cadastrar cliente");
+					sc.nextLine();
+					System.out.print("Digite o nome do cliente: ");
+					String nome = sc.nextLine();
+					oficina.cadastrarCliente(nome);
 					break;
-				} else {
-					System.out.printf("Não existe um veiculo cadastrado com a placa '%s'", placa);
+				case 3:
+					System.out.println("Cadastrar veículo");
+					System.out.print("Digite a placa do veículo: ");
+					String placa2 = sc.next();
+					sc.nextLine();
+					System.out.print("Digite o modelo do veículo: ");
+					String modelo = sc.nextLine();
+					System.out.print("Digite o nome do cliente: ");
+					String nomeDoCliente = sc.nextLine();
+					oficina.cadastrarVeiculo(placa2, modelo, nomeDoCliente);
 					break;
-				}				
-			case 2:
-				System.out.println("Cadastrar cliente");
-				sc.nextLine();
-				System.out.print("Digite o nome do cliente: ");
-				String nome = sc.nextLine();
-				oficina.cadastrarCliente(nome);
-				break;
-			case 3:
-				System.out.println("Cadastrar veículo");
-				System.out.print("Digite a placa do veículo: ");
-				String placa2 = sc.next();
-				sc.nextLine();
-				System.out.print("Digite o modelo do veículo: ");
-				String modelo = sc.nextLine();			
-				System.out.print("Digite o nome do cliente: ");
-				String nomeDoCliente = sc.nextLine();
-				oficina.cadastrarVeiculo(placa2, modelo, nomeDoCliente);
-				break;
-			case 4:
-				System.out.println("Imprimir todos os clientes cadastrados");
-				oficina.imprimirClientes();
-				break;
-			case 5:
-				System.out.println("Imprimir todos os veículos cadastrados"); 
-    			oficina.imprimirVeiculos();
-				break;
-			case 6:
-				System.out.println("Imprimir todas as ordens de serviço");
-				oficina.imprimirOrdens();
-				break;
-			case 7:
-				System.out.println("Alterar uma OS informando valor das peças, descrição e valor da mão de obra");
-				System.out.print("ID da OS: ");
-    			int idOS = sc.nextInt();
-    			System.out.print("Novo valor das peças (XXX,XX): ");
-   				double novoValorPecas = sc.nextDouble();
-    			System.out.print("Novo valor da mão de obra (XXX,XX): ");
-    			double novoValorMaoDeObra = sc.nextDouble();
-    			sc.nextLine();
-    			System.out.print("Nova descrição da mão de obra: ");
-    			String novaDescricao = sc.nextLine();
-    			oficina.alterarValoresOS(idOS, novoValorPecas, novoValorMaoDeObra, novaDescricao);
-				break;
-			case 8:
-				System.out.println("Alterar o status de OS");
-				System.out.print("ID da OS: ");
-				int id = sc.nextInt();
-
-				OrdemServico os = oficina.imprimirOrdensId(id);
-				if (os == null) {
+				case 4:
+					System.out.println("Imprimir todos os clientes cadastrados");
+					oficina.imprimirClientes();
 					break;
-				}
+				case 5:
+					System.out.println("Imprimir todos os veículos cadastrados");
+					System.out.println(oficina.imprimirVeiculos());
+					break;
+				case 6:
+					System.out.println("Imprimir todas as ordens de serviço");
+					oficina.imprimirOrdens();
+					break;
+				case 7:
+					System.out.println("Alterar uma OS informando valor das peças, descrição e valor da mão de obra");
+					System.out.print("ID da OS: ");
+					int idOS = sc.nextInt();
+					System.out.print("Novo valor das peças (XXX,XX): ");
+					double novoValorPecas = sc.nextDouble();
+					System.out.print("Novo valor da mão de obra (XXX,XX): ");
+					double novoValorMaoDeObra = sc.nextDouble();
+					sc.nextLine();
+					System.out.print("Nova descrição da mão de obra: ");
+					String novaDescricao = sc.nextLine();
+					oficina.alterarValoresOS(idOS, novoValorPecas, novoValorMaoDeObra, novaDescricao);
+					break;
+				case 8:
+					System.out.println("Alterar o status de OS");
+					System.out.print("ID da OS: ");
+					int id = sc.nextInt();
 
-				System.out.print("Novo Status (1-ABERTA, 2-EM_ANDAMENTO, 3-CONCLUIDA): ");
-				int novoStatusInt = sc.nextInt();
-				Status novoStatus = 
-					novoStatusInt == 1 ? Status.ABERTA :
-					novoStatusInt == 2 ? Status.EMANDAMENTO :
-					Status.CONCLUIDA;
+					OrdemServico os = oficina.imprimirOrdensId(id);
+					if (os == null) {
+						break;
+					}
 
-				oficina.alterarStatusOS(id, novoStatus);
-				break;
-			case 9:
-				System.out.println("Imprimir ordens de serviço informando a placa do carro");
-				System.out.println("Digite a placa do carro: ");
-				String ordensPlaca = sc.nextLine();
-				System.out.println(oficina.imprimirOrdensPlaca(ordensPlaca));
-				break;
-			case 10:
-				System.out.print("Nome do cliente: ");
-				String nomeCliente = sc.next();
+					System.out.print("Novo Status (1-ABERTA, 2-EM_ANDAMENTO, 3-CONCLUIDA): ");
+					int novoStatusInt = sc.nextInt();
+					Status novoStatus = novoStatusInt == 1 ? Status.ABERTA
+							: novoStatusInt == 2 ? Status.EMANDAMENTO : Status.CONCLUIDA;
 
-				oficina.imprimirOrdensCliente(nomeCliente);
-				break;
-			case 11:
-				System.out.println("Imprimir os veículos de um cliente");
-				System.out.print("Escolha o ID do cliente que deseja consultar: ");
-				oficina.imprimirClientes();
-				System.err.println("");
+					oficina.alterarStatusOS(id, novoStatus);
+					break;
+				case 9:
+					System.out.println("Imprimir ordens de serviço informando a placa do carro");
+					System.out.println("Digite a placa do carro: ");
+					String ordensPlaca = sc.nextLine();
+					System.out.println(oficina.imprimirOrdensPlaca(ordensPlaca));
+					break;
+				case 10:
+					System.out.print("Nome do cliente: ");
+					String nomeCliente = sc.next();
 
-				break;
-			case 12:
-				System.out.println("Imprimir as ordens de serviço por status");
+					oficina.imprimirOrdensCliente(nomeCliente);
+					break;
+				case 11:
+					System.out.println("Imprimir os veículos de um cliente");
+					oficina.imprimirClientes();
+					System.out.print("Digite o nome do cliente que deseja consultar: ");
+					String cliente = sc.nextLine();
+					sc.nextLine();
+					System.out.println(oficina.imprimirVeiculosCliente(cliente));
+					break;
+				case 12:
+					System.out.println("Imprimir as ordens de serviço por status");
 
-				break;
-			case 13:
-				System.out.println("Imprimir ordens de serviço de um período");
+					break;
+				case 13:
+					System.out.println("Imprimir ordens de serviço de um período");
 
-				break;
-			default:
-				System.out.println("Opção inválida!");
-				break;
+					break;
+				default:
+					System.out.println("Opção inválida!");
+					break;
 			}
 			System.out.println();
 		} while (resp != 0);

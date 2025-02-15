@@ -1,13 +1,13 @@
 package controle;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
 import entidades.Cliente;
 import entidades.OrdemServico;
 import entidades.Veiculo;
 import enums.Status;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
 
 public class Controle {
 	Scanner scan = new Scanner(System.in);
@@ -123,8 +123,32 @@ public class Controle {
 	}
 
 	public String imprimirVeiculosCliente(String nomeCliente) {
-	
-		return null;
+		boolean econtrouVeiculo = false;
+		boolean encontrouCliente = false;
+		for (Cliente c : clientes){							
+			if(nomeCliente.equalsIgnoreCase(c.getNome())){
+				encontrouCliente = true;
+				for (Veiculo v : veiculos){
+					if(nomeCliente.equalsIgnoreCase(v.getCliente().getNome())){
+						System.out.println(v);
+						econtrouVeiculo = true;							
+					}
+					
+				}				
+							
+			}			
+		}
+		
+		if(econtrouVeiculo == false){
+			System.out.println("O cliente " + nomeCliente + " não possui veículos cadastrados!");
+			
+		}
+
+		if(encontrouCliente == false){
+			System.out.println("O cliente " + nomeCliente + " não foi cadastrado!");
+		}		
+		
+		return"";
 	}
 
 	public String imprimirOrdensStatus(String status) {
@@ -156,6 +180,7 @@ public class Controle {
 		}
 		return null;
 	}
+
 
 	public Cliente getCliente(String nomeCliente) {
 		for (Cliente c : clientes) {
